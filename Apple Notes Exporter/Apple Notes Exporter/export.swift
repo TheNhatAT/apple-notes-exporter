@@ -78,7 +78,7 @@ func exportNotes(sharedState: AppleNotesExporterState, outputURL: URL, outputFor
                 item.load()
                 
                 // Save the note to file
-                item.save(toFolder: baseURL, format: outputFormat, withAttachments: true)
+                item.save(toFolder: baseURL, format: outputFormat, withAttachments: false)
                 
                 // Update status of this note
                 item.exporting = false

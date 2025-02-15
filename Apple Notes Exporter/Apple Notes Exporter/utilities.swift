@@ -126,11 +126,10 @@ func createDirectoryIfNotExists(location: URL) {
     let fileManager = FileManager.default
     if !fileManager.fileExists(atPath: location.path) {
         do {
-            try fileManager.createDirectory(at: location, withIntermediateDirectories: false)
+            try fileManager.createDirectory(at: location, withIntermediateDirectories: true) 
         } catch {
-            print("Error creating directory at \(location.absoluteString)")
+            print("Error creating directory at \(location.absoluteString): \(error.localizedDescription)") 
         }
-        
     }
 }
 
